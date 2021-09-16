@@ -1,1 +1,1 @@
-[] 1-traitement du dictionnaire vide 
+[X] 1-traitement du dictionnaire vide 

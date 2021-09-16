@@ -23,6 +23,10 @@ public class Dictionary {
 		return name;
 	}
 	public boolean isEmpty() {
-		return true;
+		if(this.translations.size()==0) {
+			return true;
+		}
+		else
+			return false;
 	}
 }
