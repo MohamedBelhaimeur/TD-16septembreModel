@@ -2,6 +2,8 @@ package TD;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,6 +16,8 @@ public class DictionaryTest {
         dict = new Dictionary("Example");
         dict.addTranslation("contre", "against");
         dict.addTranslation("pour", "for");
+       
+        
 }
 	@Test public void testDictionaryName() {
 		
@@ -31,4 +35,13 @@ public class DictionaryTest {
 		
 		assertThat(dict.getTranslation("pour"), equalTo("for"));
 }
+	
+	@Test public void TestPlusieursSens() {
+		 ArrayList<String>liste_trad=new ArrayList<String>();
+	        liste_trad.add("versus");
+	        liste_trad.add("against");
+		assertThat(dict.getTranslation("contre"), equalTo(liste_trad));
+		
+		
+	}
 }
