@@ -1,9 +1,10 @@
 package TD;
 
 
-
+import java.util.HashMap;
 public class Dictionary {
 	private String name;
+	private HashMap<String, String> translations=new HashMap<>();
 	
 	public Dictionary(String name) {
 		this.name=name;
@@ -11,9 +12,11 @@ public class Dictionary {
 		
 	}
 	public String getTranslation(String element) {
-		if(element.equals("contre"))
-			return "against";
-		return null;
+		return this.translations.get(element);
+	}
+	public void addTranslation(String elementprem,String elementsec) {
+		
+	this.translations.put(elementprem, elementsec);
 	}
 	public String getName()
 	{
