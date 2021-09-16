@@ -9,8 +9,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class DictionaryTest {
 	
-	Dictionary dict= new Dictionary("Example");
-	
+	Dictionary dict;
+	@Before public void initialize () {
+		 dict = new Dictionary("Example");
+		}
 	@Test public void testDictionaryName() {
 		
         assertThat(dict.getName(), equalTo("Example"));
