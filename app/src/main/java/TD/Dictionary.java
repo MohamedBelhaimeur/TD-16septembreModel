@@ -15,6 +15,9 @@ public class Dictionary {
 	public String getTranslation(String element) {
 		return this.translations.get(element);
 	}
+	public List<String> getMultipleTranslations(String element) {
+		return this.translations.get(element);
+	}
 	public void addTranslation(String elementprem,List<String>elements_liste) {
 		
 	this.translations.put(elementprem, elements_liste);
