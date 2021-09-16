@@ -61,4 +61,8 @@ public class DictionaryTest {
 		
 		
 	}
+	@Test public void TestTraductionInverse() {
+		
+		assertThat(dict.getTranslationInverse("versus"), equalTo("contre"));
+	}
 }
