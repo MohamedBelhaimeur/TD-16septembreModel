@@ -12,4 +12,7 @@ public class Dictionary {
 	{
 		return name;
 	}
+	public boolean isEmpty() {
+		return true;
+	}
 }
