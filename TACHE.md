@@ -1,0 +1,1 @@
+[] 1-traitement du dictionnaire vide 
