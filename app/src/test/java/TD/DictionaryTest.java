@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class DictionaryTest {
 	
-	Dictionary dict= new Dictionary();
+	Dictionary dict= new Dictionary("Example");
 	
 	@Test public void testDictionaryName() {
 		

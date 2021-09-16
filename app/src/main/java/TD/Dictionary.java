@@ -1,13 +1,15 @@
 package TD;
 
 public class Dictionary {
-
-	public Dictionary() {
+	private String name;
+	
+	public Dictionary(String name) {
+		this.name=name;
 		
 	}
 	
 	public String getName()
 	{
-		return "Example";
+		return name;
 	}
 }
