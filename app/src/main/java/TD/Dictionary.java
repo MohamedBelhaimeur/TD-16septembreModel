@@ -8,7 +8,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.stream.Collectors;
-public class Dictionary {
+public class Dictionary implements IDictionary {
+	public HashMap<List<String>, List<String>> getTranslations() {
+		return translations;
+	}
+
+	public void setTranslations(HashMap<List<String>, List<String>> translations) {
+		this.translations = translations;
+	}
 	private String name;
 	private HashMap<List<String>, List<String>> translations=new HashMap<>();
 	
@@ -46,7 +53,7 @@ public List<String> getTranslationInverse(String element){
 		return name;
 	}
 	public boolean isEmpty() {
-		if(this.translations.size()==0) {
+		if(this.translations.isEmpty()) {
 			return true;
 		}
 		else
