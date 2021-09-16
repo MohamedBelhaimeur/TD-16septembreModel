@@ -15,20 +15,24 @@ public class DictionaryTest {
 	@Before public void initialize () {
         dict = new Dictionary("Example");
         List<String>listes_traduction=new ArrayList<String>();
+        List<String>listes_traduction_reverse=new ArrayList<String>();
+        listes_traduction_reverse.add("contre");
         listes_traduction.add("versus");
       
-        dict.addTranslation("contre", listes_traduction);  
+        dict.addTranslation(listes_traduction_reverse, listes_traduction);  
         
         List<String>listes_traduction2=new ArrayList<String>();
-        listes_traduction2.add("for");
+        List<String>listes_traduction_reverse2=new ArrayList<String>();
+        listes_traduction2.add("pour");
        
-        dict.addTranslation("pour",listes_traduction2 ); 
+        dict.addTranslation(listes_traduction_reverse2,listes_traduction2 ); 
         
         List<String>listes_traduction3=new ArrayList<String>();
         listes_traduction3.add("hi");
         listes_traduction3.add("hello");
-       
-        dict.addTranslation("salut",listes_traduction3 );
+        List<String>listes_traduction_reverse3=new ArrayList<String>();
+        listes_traduction_reverse3.add("salut");
+        dict.addTranslation(listes_traduction_reverse3,listes_traduction3 );
         
 }
 	@Test public void testDictionaryName() {
@@ -64,7 +68,7 @@ public class DictionaryTest {
 	@Test public void TestTraductionInverse() {
 		ArrayList<String>liste_trad=new ArrayList<String>();
         liste_trad.add("contre");
-        liste_trad.add("opposition");
+        
 		assertThat(dict.getTranslationInverse("versus"), equalTo(liste_trad));
 	}
 }
