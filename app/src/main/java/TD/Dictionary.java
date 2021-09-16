@@ -2,9 +2,10 @@ package TD;
 
 
 import java.util.HashMap;
+import java.util.List;
 public class Dictionary {
 	private String name;
-	private HashMap<String, String> translations=new HashMap<>();
+	private HashMap<String, List<String>> translations=new HashMap<>();
 	
 	public Dictionary(String name) {
 		this.name=name;
@@ -14,9 +15,9 @@ public class Dictionary {
 	public String getTranslation(String element) {
 		return this.translations.get(element);
 	}
-	public void addTranslation(String elementprem,String elementsec) {
+	public void addTranslation(String elementprem,List<String>elements_liste) {
 		
-	this.translations.put(elementprem, elementsec);
+	this.translations.put(elementprem, elements_liste);
 	}
 	public String getName()
 	{
