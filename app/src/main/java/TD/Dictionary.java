@@ -19,14 +19,22 @@ public class Dictionary {
 	}
 	
 	public List<String> getTranslation(String element) {
-		return this.translations.get(element);
+		for (Entry<List<String>, List<String>> mapentry : this.translations.entrySet()) {
+			if(mapentry.getKey().contains(element)) {
+				return mapentry.getValue();
+			}
+	                            
+	        }
+		return null;
 	}
 public List<String> getTranslationInverse(String element){
-	List<String>lsite_a_retourner=new ArrayList<String>();
-	for ( List<String> key : translations.keySet() ) {
-	    lsite_a_retourner.add(key.toString());
-	}
-	return lsite_a_retourner;
+	for (Entry<List<String>, List<String>> mapentry : this.translations.entrySet()) {
+		if(mapentry.getValue().contains(element)) {
+			return mapentry.getKey();
+		}
+                            
+        }
+	return null;
             
 }
 	public void addTranslation(List<String>elements_liste1,List<String>elements_liste) {
