@@ -62,7 +62,9 @@ public class DictionaryTest {
 		
 	}
 	@Test public void TestTraductionInverse() {
-		
-		assertThat(dict.getTranslationInverse("versus"), equalTo("contre"));
+		ArrayList<String>liste_trad=new ArrayList<String>();
+        liste_trad.add("contre");
+        liste_trad.add("opposition");
+		assertThat(dict.getTranslationInverse("versus"), equalTo(liste_trad));
 	}
 }
