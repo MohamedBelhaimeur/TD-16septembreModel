@@ -9,8 +9,12 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class DictionaryTest {
 	
-	Dictionary dict= new Dictionary("Example");
-	
+	Dictionary dict;
+	@Before public void initialize () {
+        dict = new Dictionary("Example");
+        dict.addTranslation("contre", "against");
+        dict.addTranslation("pour", "for");
+}
 	@Test public void testDictionaryName() {
 		
         assertThat(dict.getName(), equalTo("Example"));
@@ -18,13 +22,13 @@ public class DictionaryTest {
 	
 	@Test public void testIsEmpty() {
 		
-        assertThat(dict.isEmpty(), equalTo(true));
+        assertThat(dict.isEmpty(), equalTo(false));
         }
 
 	@Test public void testOneTranslation() {
-		dict.addTranslation("contre", "against");
+		
 		assertThat(dict.getTranslation("contre"), equalTo("against"));
-		dict.addTranslation("pour", "for");
+		
 		assertThat(dict.getTranslation("pour"), equalTo("for"));
 }
 }
